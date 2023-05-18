@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ep-mern-ms-ticketservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ep-mern-ms-ticketservice
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: ep-mern-ms-ticketservice
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: ep-mern-ms-ticketservice
+        image: azurecontainerlorde.azurecr.io/ep-mern-ms-ticketservice:${BUILD_TAG}
+        envFrom: 
+        - configMapRef:
+            name: ep-config-map
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ep-mern-ms-ticketservice
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 3000
+  selector:
+    app: ep-mern-ms-ticketservice

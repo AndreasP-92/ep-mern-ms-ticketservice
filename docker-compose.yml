@@ -1,0 +1,22 @@
+version: '3.8'
+
+networks: 
+  ep-mern: 
+    external: true
+
+services:
+
+  api:
+    image: ep-mern-ms-ticketservice
+    container_name: ep-mern-ms-ticketservice
+    # stdin_open: true
+    build:
+      dockerfile: Dockerfile
+      context: ./microservice
+    volumes:
+      - /api/node_modules
+      - ./api:/app
+    ports:
+      - "3000:3000"
+    # networks: 
+    #   - ep-mern
