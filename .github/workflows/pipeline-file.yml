@@ -27,7 +27,7 @@ jobs:
 
       # - name: Create env file
       #   run: |
-      #     touch .env
+      #     touch .env 
       #     echo "${{ secrets.SERVER_ENV_PROD }}" > .env
       #     echo "BUILD_TAG=${{ env.BUILD_TAG }}" > .env
       #     cat .env
