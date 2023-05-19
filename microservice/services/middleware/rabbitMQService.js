@@ -5,8 +5,8 @@ let channel, connection;
 
 async function connectQueue(){
     try {
-        console.log(process.env.ENVIRONTMENT)
-        connection = process.env.ENVIRONTMENT == 'prod'? await amqplib.connect(`amqp://${process.env.RABBITMQ_IP}:5672`) : await amqplib.connect("amqp://localhost:5672");
+        console.log(process.env.ENVIRONMENT)
+        connection = process.env.ENVIRONMENT == 'prod'? await amqplib.connect(`amqp://${process.env.RABBITMQ_IP}:5672`) : await amqplib.connect("amqp://localhost:5672");
 
         channel    = await connection.createChannel()
 
