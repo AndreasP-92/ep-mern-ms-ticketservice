@@ -1,4 +1,3 @@
-import asd from '../services/middleware/rabbitMQService'
 import { Router } from 'express'
 
 const router = Router()
