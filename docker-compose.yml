@@ -1,13 +1,8 @@
 version: '3.8'
 
-networks: 
-  ep-mern: 
-    external: true
-
 services:
-
   api:
-    image: ep-mern-ms-ticketservice
+    image: ep-mern-ms-ticketservice:latest
     container_name: ep-mern-ms-ticketservice
     # stdin_open: true
     build:
@@ -17,6 +12,6 @@ services:
       - /api/node_modules
       - ./api:/app
     ports:
-      - "3000:3000"
+      - "4001:4001"
     # networks: 
     #   - ep-mern

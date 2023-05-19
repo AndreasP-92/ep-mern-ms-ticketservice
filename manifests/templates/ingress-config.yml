@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ep-ms-ticketservice-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /ms/ticketservice
+        pathType: Prefix
+        backend:
+          service:
+            name: ep-mern-ms-ticketservice 
+            port:
+              number: 80
