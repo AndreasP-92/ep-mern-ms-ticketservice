@@ -1,5 +1,5 @@
 import amqplib from "amqplib";
-import ticketRepository from "../../repository/ticketRepository.js";
+// import ticketRepository from "../../repository/ticketRepository.js";
 
 let channel, connection;
 

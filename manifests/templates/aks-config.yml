@@ -24,7 +24,7 @@ spec:
         image: azurecontainerlorde.azurecr.io/ep-mern-ms-ticketservice:${BUILD_TAG}
         envFrom: 
         - configMapRef:
-            name: ep-config-map
+            name: ep-mern-ms-ticketservice-map
         ports:
         - containerPort: 4001
         resources:
