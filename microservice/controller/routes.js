@@ -1,10 +1,13 @@
 import asd from '../services/middleware/rabbitMQService'
+import { Router } from 'express'
 
-module.exports = function(app){
-    app.get("/send-msg")
-    app.get("/ms/ticketservice", (req,res)=>{
-        res.send("Welcome to Ticket Service")
-    })
-}
+const router = Router()
+
+router.get('/ms/ticket', (req, res) => {
+    res.send("Welcome to the Ticket Service API")
+})
+
+
+export default router
 
 
