@@ -21,7 +21,7 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: ep-mern-ms-ticketservice
-        image: azurecontainerlorde.azurecr.io/ep-mern-ms-ticketservice:${BUILD_TAG}
+        image: azurecontainerlord.azurecr.io/ep-mern-ms-ticketservice:${BUILD_TAG}
         envFrom: 
         - configMapRef:
             name: ep-mern-ms-ticketservice-map
